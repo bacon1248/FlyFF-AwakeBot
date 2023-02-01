@@ -1,0 +1,7 @@
+_serverConfig.WhitelistedCharacters.Add('+');
+string whitelistedCharactersString = new string(_serverConfig.WhitelistedCharacters.ToList().ToArray());
+using (var sw = new StreamWriter(Globals.TesseractFolderName + "\\tessdata\\configs\\whitelisted_characters"))
+{
+    sw.WriteLine("tessedit_char_whitelist " + whitelistedCharactersString);
+    // ... other code ...
+}
